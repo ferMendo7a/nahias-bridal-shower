@@ -1,0 +1,98 @@
+[
+  {
+    "scenario": "01-before-24h",
+    "simulatedNow": "2026-12-04T00:00:00Z",
+    "expectedMatches": true,
+    "state": {
+      "titleHidden": true,
+      "titleText": "Falta poquito para el Tecito",
+      "complete": false,
+      "values": [
+        "02",
+        "20",
+        "00",
+        "00"
+      ],
+      "status": "06 de diciembre, 17:00 h · GMT-3",
+      "confettiPieces": 0,
+      "detailLabels": [
+        "Fecha",
+        "Hora",
+        "Lugar",
+        "Reserva"
+      ],
+      "detailValues": [
+        "06 de diciembre de 2026",
+        "17:00 h",
+        "Mi Evento",
+        "Gs. 60.000 por persona"
+      ],
+      "scrollWidth": 390,
+      "clientWidth": 390
+    }
+  },
+  {
+    "scenario": "02-within-24h",
+    "simulatedNow": "2026-12-06T10:00:00-03:00",
+    "expectedMatches": true,
+    "state": {
+      "titleHidden": false,
+      "titleText": "Falta poquito para el Tecito",
+      "complete": false,
+      "values": [
+        "00",
+        "07",
+        "00",
+        "00"
+      ],
+      "status": "06 de diciembre, 17:00 h · GMT-3",
+      "confettiPieces": 0,
+      "detailLabels": [
+        "Fecha",
+        "Hora",
+        "Lugar",
+        "Reserva"
+      ],
+      "detailValues": [
+        "06 de diciembre de 2026",
+        "17:00 h",
+        "Mi Evento",
+        "Gs. 60.000 por persona"
+      ],
+      "scrollWidth": 390,
+      "clientWidth": 390
+    }
+  },
+  {
+    "scenario": "03-event-started",
+    "simulatedNow": "2026-12-07T00:00:00Z",
+    "expectedMatches": true,
+    "state": {
+      "titleHidden": true,
+      "titleText": "Falta poquito para el Tecito",
+      "complete": true,
+      "values": [
+        "00",
+        "00",
+        "00",
+        "00"
+      ],
+      "status": "¡Llegó el día! 🎉 El Tecito de casa ya comenzó 💕",
+      "confettiPieces": 36,
+      "detailLabels": [
+        "Fecha",
+        "Hora",
+        "Lugar",
+        "Reserva"
+      ],
+      "detailValues": [
+        "06 de diciembre de 2026",
+        "17:00 h",
+        "Mi Evento",
+        "Gs. 60.000 por persona"
+      ],
+      "scrollWidth": 390,
+      "clientWidth": 390
+    }
+  }
+]

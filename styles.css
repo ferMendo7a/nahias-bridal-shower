@@ -757,3 +757,122 @@ footer span {
     width: auto;
   }
 }
+
+.countdown {
+  width: min(100%, 520px);
+  margin: 24px auto 0;
+  padding: 18px 14px 16px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(185, 124, 125, 0.25);
+  border-radius: 20px;
+  background: rgba(255, 253, 249, 0.9);
+  box-shadow: 0 14px 36px rgba(121, 82, 65, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.countdown__title {
+  margin: 0 0 12px;
+  color: var(--brown-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.countdown__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.countdown__unit {
+  min-width: 0;
+  padding: 10px 4px 8px;
+  border-radius: 12px;
+  background: var(--blush-light);
+}
+
+.countdown__unit strong {
+  display: block;
+  color: var(--brown-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.15rem, 7vw, 1.75rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.countdown__unit span {
+  display: block;
+  margin-top: 5px;
+  color: var(--brown);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.countdown__status {
+  margin: 12px 0 0;
+  color: var(--brown);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.countdown--complete {
+  border-color: rgba(95, 128, 102, 0.45);
+  background: rgba(255, 253, 249, 0.96);
+  animation: countdown-celebrate 1.4s ease-in-out both;
+}
+
+.countdown--complete .countdown__title {
+  color: var(--green);
+}
+
+.countdown--complete .countdown__status {
+  color: var(--green);
+  font-size: 0.82rem;
+}
+
+.countdown__confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.countdown__confetti span {
+  width: 7px;
+  height: 13px;
+  position: absolute;
+  top: -16px;
+  left: var(--x);
+  border-radius: 2px;
+  background: var(--color);
+  opacity: 0;
+  animation: confetti-fall var(--duration) var(--delay) ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  0% { opacity: 0; transform: translateY(-10px) rotate(0deg); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(230px) rotate(540deg); }
+}
+
+@keyframes countdown-celebrate {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.025); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countdown--complete {
+    animation: none;
+  }
+
+  .countdown__confetti span {
+    animation: none;
+    display: none;
+  }
+}
