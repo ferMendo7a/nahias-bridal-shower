@@ -635,22 +635,23 @@ footer span {
     gap: 5px;
   }
 
-  .bank-details dd {
+  .bank-details dt,
+  .alias-row dt {
+    text-align: left;
+  }
+
+  .bank-details dd,
+  .alias-row dd {
     text-align: left;
   }
 
   .alias-row {
     flex-direction: column;
-    padding-block: 12px !important;
   }
 
-  .alias-row > div {
-    width: 100%;
-  }
-
+  .alias-row > div,
   .copy-button {
     width: 100%;
-    min-height: 44px;
   }
 }
 
@@ -660,12 +661,45 @@ footer span {
     align-items: center;
   }
 
+  .bank-details dt,
+  .alias-row dt {
+    text-align: left;
+  }
+
+  .bank-details dd,
+  .alias-row dd {
+    text-align: right;
+  }
+
+  .alias-row {
+    flex-direction: row;
+  }
+
+  .alias-row > div {
+    width: auto;
+  }
+
+  .copy-button {
+    width: auto;
+  }
+}
+
+@media (min-width: 478px) {
+  .bank-details > div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bank-details dt {
+    text-align: left;
+  }
+
   .bank-details dd {
     text-align: right;
   }
 
   .alias-row {
-    align-items: center;
     flex-direction: row;
   }
 
@@ -680,20 +714,19 @@ footer span {
 
 @container (max-width: 250px) {
   .bank-details > div {
-    min-height: 64px;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
   }
-
-  .bank-details dd {
+  .bank-details dt,
+  .bank-details dd,
+  .alias-row dt,
+  .alias-row dd {
     text-align: left;
   }
-
   .alias-row {
     flex-direction: column;
   }
-
   .alias-row > div,
   .copy-button {
     width: 100%;
@@ -704,20 +737,22 @@ footer span {
   .bank-details > div {
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
-
-  .bank-details dd {
+  .bank-details dt,
+  .alias-row dt {
+    text-align: left;
+  }
+  .bank-details dd,
+  .alias-row dd {
     text-align: right;
   }
-
   .alias-row {
     flex-direction: row;
   }
-
   .alias-row > div {
     width: auto;
   }
-
   .copy-button {
     width: auto;
   }
