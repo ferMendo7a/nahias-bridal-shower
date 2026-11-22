@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8efe5">
+  <meta name="description" content="Información y confirmación para el Tecito de casa de Nahiara.">
+  <title>Tecito de casa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="hero" aria-labelledby="event-title">
+      <div class="ribbon" aria-hidden="true">♡</div>
+      <p class="eyebrow">Una tarde para celebrar</p>
+      <h1 id="event-title">Tecito de <span>casa</span></h1>
+      <p class="hero__subtitle">Te invitamos a compartir una linda tarde de merienda junto a nuestra querida novia Nahiara 👰🏻💕</p>
+    </header>
+
+    <section class="event-details" aria-label="Información del evento">
+      <article class="detail-card">
+        <span class="detail-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img"><path d="M7 2v3M17 2v3M3.5 9h17M5 4h14a1.5 1.5 0 0 1 1.5 1.5v14A1.5 1.5 0 0 1 19 21H5a1.5 1.5 0 0 1-1.5-1.5v-14A1.5 1.5 0 0 1 5 4Z"/></svg>
+        </span>
+        <div>
+          <p class="detail-card__label">Fecha</p>
+          <p class="detail-card__value">06 de diciembre de 2026</p>
+        </div>
+      </article>
+
+      <article class="detail-card detail-card--location">
+        <span class="detail-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <div>
+          <p class="detail-card__label">Lugar</p>
+          <p class="detail-card__value">Mi Evento</p>
+        </div>
+        <a class="circle-button" href="https://maps.app.goo.gl/zM4kKaCx3dd25XVt8?g_st=ic" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación en Google Maps">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Ver ubicación</span>
+        </a>
+      </article>
+
+      <article class="detail-card">
+        <span class="detail-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9v6M18 9v6"/></svg>
+        </span>
+        <div>
+          <p class="detail-card__label">Reserva</p>
+          <p class="detail-card__value">Gs. 60.000 por persona</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="confirmation" aria-labelledby="confirmation-title">
+      <header class="confirmation__header">
+        <p class="eyebrow">Tu lugar te espera</p>
+        <h2 id="confirmation-title">¿Contamos con vos?</h2>
+        <p>Reservá tu lugar con la transferencia antes del jueves 3 de diciembre.</p>
+      </header>
+
+      <div class="steps">
+        <article class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Realizá la transferencia</h3>
+            <dl class="bank-details">
+              <div>
+                <dt>Monto</dt>
+                <dd>Gs. 60.000</dd>
+              </div>
+              <div>
+                <dt>Banco</dt>
+                <dd>Interfisa</dd>
+              </div>
+              <div>
+                <dt>Titular</dt>
+                <dd>Mónica Sanabria</dd>
+              </div>
+              <div class="alias-row">
+                <div>
+                  <dt>Alias</dt>
+                  <dd id="alias-value">0972493848</dd>
+                </div>
+                <button class="copy-button" id="copy-alias" type="button" aria-describedby="copy-status">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </dl>
+            <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+            <p class="step-note">Conservá el comprobante para compartirlo en el siguiente paso.</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Confirmá por WhatsApp</h3>
+            <form id="confirmation-form" novalidate>
+              <label for="guest-name">Tu nombre</label>
+              <input id="guest-name" name="guestName" type="text" autocomplete="name" placeholder="Escribí tu nombre" required>
+              <p class="form-error" id="name-error" role="alert"></p>
+              <button class="whatsapp-button" type="submit">
+                <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 358.2l-4.4-7c-18.7-29.9-28.5-64.3-28.5-99.9 0-105.7 86-191.7 191.7-191.7 51.1 0 99.1 19.9 135.2 56 36.1 36.1 56 84 56 135.2 0 105.7-86 191.7-191.7 191.7zm101.3-138.1c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.2 5.7-8.5 16.3-28.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.9-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5.1-3.9-10.6-6.7z"/></svg>
+                Confirmar por Whatsapp
+              </button>
+            </form>
+          </div>
+        </article>
+
+        <article class="step-card step-card--last">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Envianos el comprobante</h3>
+            <p>Desde la conversación de WhatsApp que se abre, mandanos una foto del comprobante.</p>
+          </div>
+        </article>
+
+        <article class="step-card step-card--gift">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Ver lista de regalos</h3>
+            <a class="gift-link" href="https://www.wishwave.com/lists/babf8964-0f18-4f3a-9a88-639c17372127" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M7.5 8C5.8 8 5 7.1 5 6c0-1.1.9-2 2-2 2.2 0 5 4 5 4s2.8-4 5-4c1.1 0 2 .9 2 2 0 1.1-.8 2-2.5 2"/></svg>
+              <span>Ver listado</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>Tecito de casa <span aria-hidden="true">♡</span></p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
